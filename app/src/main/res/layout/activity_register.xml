@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="848dp">
+
+    <ImageView
+        android:id="@+id/loginStarIc"
+        android:layout_width="46dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="27dp"
+        android:src="@drawable/ic_login_star"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="20sp"
+        android:background="@drawable/ic_back_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loginStarIc" />
+
+
+    <TextView
+        android:id="@+id/signinText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="34dp"
+        android:text="Sign in"
+        android:textSize="39dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/loginStarIc" />
+
+    <LinearLayout
+        android:id="@+id/layoutENP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signinText">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3.5sp"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/onboarding_edittext_bg_selector"
+            android:hint="Your email"
+            android:lineSpacingExtra="4dp"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:lineSpacingExtra="3.5sp"
+            android:text="Password"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/onboarding_edittext_bg_selector"
+            android:drawableRight="@drawable/ic_eye"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:lineSpacingExtra="4sp"
+            android:padding="16dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/confirmPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:lineSpacingExtra="3.5sp"
+            android:text="Confirm Password"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/confirmPassEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/onboarding_edittext_bg_selector"
+            android:drawableRight="@drawable/ic_eye_show"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:lineSpacingExtra="4sp"
+            android:padding="16dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/phoneNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:lineSpacingExtra="3.5sp"
+            android:text="Phone number"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/phoneNumEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/onboarding_edittext_bg_selector"
+            android:hint="Your phone number "
+            android:inputType="textPassword"
+            android:lineSpacingExtra="4sp"
+            android:padding="16dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="9dp"
+        android:text="Address"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutENP" />
+
+
+    <EditText
+        android:id="@+id/postCodeLft"
+        android:layout_width="198dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="7dp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:hint="Post code"
+        android:padding="14sp"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address" />
+
+    <EditText
+        android:id="@+id/postCodeRt"
+        android:layout_width="155dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:backgroundTint="@color/ColorPrimary"
+        android:gravity="center"
+        android:hint="Post code"
+        android:padding="14dp"
+        android:textSize="16sp"
+        android:textColorHint="@color/white"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/postCodeLft" />
+
+    <EditText
+        android:id="@+id/addressEdit"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:hint="Address "
+        android:inputType="textPassword"
+        android:lineSpacingExtra="4sp"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/postCodeLft" />
+
+    <EditText
+        android:id="@+id/addressEdit1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:hint="Address "
+        android:inputType="textPassword"
+        android:lineSpacingExtra="4sp"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/addressEdit" />
+
+    <TextView
+        android:id="@+id/contentTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:drawableLeft="@drawable/ic_tick"
+        android:lineSpacingExtra="3.5sp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addressEdit1"
+        tools:text="   I accept the terms and privacy policy" />
+
+    <TextView
+        android:id="@+id/nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/primary_btn_bg"
+        android:gravity="center"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:clickable="true"
+        android:text="Next"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/contentTxt"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
