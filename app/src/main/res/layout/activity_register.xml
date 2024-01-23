@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="848dp">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
     <ImageView
         android:id="@+id/loginStarIc"
@@ -36,6 +41,7 @@
         android:textSize="39dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/loginStarIc" />
+
 
     <LinearLayout
         android:id="@+id/layoutENP"
@@ -87,7 +93,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="6dp"
             android:background="@drawable/onboarding_edittext_bg_selector"
-            android:drawableRight="@drawable/ic_eye"
+            android:drawableRight="@drawable/ic_eye_hidden"
             android:hint="********"
             android:inputType="textPassword"
             android:lineSpacingExtra="4sp"
@@ -217,11 +223,13 @@
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/addressEdit" />
 
+
     <TextView
         android:id="@+id/contentTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
         android:drawableLeft="@drawable/ic_tick"
         android:lineSpacingExtra="3.5sp"
         android:textColor="@color/black"
@@ -248,5 +256,7 @@
         app:layout_constraintTop_toBottomOf="@id/contentTxt"
         />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

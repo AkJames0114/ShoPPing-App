@@ -21,33 +21,26 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="54dp"
-        android:layout_marginRight="34dp"
+        android:layout_marginRight="20sp"
         android:text="Sign in"
         android:textSize="39dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/loginStarIc" />
 
-    <LinearLayout
-        android:id="@+id/layoutENP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signinText">
-
-
         <TextView
+            android:id="@+id/emailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="3.5sp"
             android:text="Email address"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf="@id/signinText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginTop="38dp"/>
 
         <EditText
             android:id="@+id/emailEditText"
@@ -58,11 +51,26 @@
             android:hint="helloworld@gmail.com"
             android:lineSpacingExtra="4dp"
             android:padding="16dp"
-            android:drawableRight="@drawable/ic_tick"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/emailAddress"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"/>
+
+        <ImageView
+            android:id="@+id/icVerifiedEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tick"
+            android:layout_marginRight="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/emailEditText"
+            app:layout_constraintRight_toRightOf="@id/emailEditText"
+            app:layout_constraintTop_toTopOf="@id/emailEditText"
+            android:visibility="invisible"/>
 
         <TextView
+            android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
@@ -70,7 +78,11 @@
             android:text="Password"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf="@id/emailEditText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"/>
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -80,10 +92,23 @@
             android:background="@drawable/onboarding_edittext_bg_selector"
             android:hint="********"
             android:inputType="textPassword"
-            android:drawableRight="@drawable/ic_eye"
             android:lineSpacingExtra="4sp"
             android:padding="16dp"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            />
+    <ImageView
+        android:id="@+id/icVerifiedEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_eye_selector"
+        android:layout_marginRight="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/passwordEditText"
+        app:layout_constraintRight_toRightOf="@id/passwordEditText"
+        app:layout_constraintTop_toTopOf="@id/passwordEditText"/>
 
         <TextView
             android:id="@+id/forgotPswBtn"
@@ -96,7 +121,11 @@
             android:text="Forgot password?"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"/>
 
         <TextView
             android:id="@+id/loginBtn"
@@ -108,8 +137,12 @@
             android:gravity="center"
             android:text="Log in"
             android:textColor="#ffffff"
-            android:textSize="16sp" />
-    </LinearLayout>
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/forgotPswBtn"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"/>
+
 
     <TextView
         android:id="@+id/orLoginWith"
@@ -123,7 +156,7 @@
         android:textStyle="normal"
         app:layout_constraintLeft_toRightOf="@id/lineLeft"
         app:layout_constraintRight_toLeftOf="@id/lineRight"
-        app:layout_constraintTop_toBottomOf="@id/layoutENP" />
+        app:layout_constraintTop_toBottomOf="@id/loginBtn" />
 
     <ImageView
         android:id="@+id/lineLeft"
@@ -135,7 +168,7 @@
         android:background="#d8dadc"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/orLoginWith"
-        app:layout_constraintTop_toBottomOf="@id/layoutENP" />
+        app:layout_constraintTop_toBottomOf="@id/loginBtn" />
 
     <ImageView
         android:id="@+id/lineRight"
@@ -147,7 +180,7 @@
         android:background="#d8dadc"
         app:layout_constraintLeft_toRightOf="@id/orLoginWith"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutENP" />
+        app:layout_constraintTop_toBottomOf="@id/loginBtn" />
 
     <ImageView
         android:id="@+id/facebookIc"
