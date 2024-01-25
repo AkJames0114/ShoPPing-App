@@ -3,9 +3,13 @@ package com.jamshidbek.shoppingapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -13,6 +17,7 @@ import com.jamshidbek.shoppingapp.Base.BaseActivity;
 import com.jamshidbek.shoppingapp.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
+
 
     @Override
     protected ActivityLoginBinding inflateViewBinding(LayoutInflater inflater) {
@@ -65,7 +70,61 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 //                }
 
                 binding.icVerifiedEmail.setVisibility(isEmailValid(email) ? View.VISIBLE : View.INVISIBLE);
-//
+                if (email.length()== 15){
+                    binding.passwordEditText.requestFocus();/*bu function etPasswordda 10ta characterdan keyn
+                                                           ozi pasgi qismga auto otishni taminlaydi*/
+                }
+            }
+        });
+
+
+        //Eye show hide button logic!
+        binding.showHideBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isSelected = binding.showHideBtn.isSelected();
+
+                //current state: isSelected => true next state: !isSelected => false
+                //current state: isSelected => false next state: !isSelected => true
+                if (!isSelected){
+                    //hide password
+                    //---1st method
+                    // binding.passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    //---2nd method
+                    binding.passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                }else {
+                    //show password
+                    //---1st method
+                    //binding.passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //---2nd method
+                    binding.passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+                }
+
+                binding.showHideBtn.setSelected(!isSelected);
+            }
+        });
+
+        //Travel between Activities
+        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.forgotPswBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
+        binding.signUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }
