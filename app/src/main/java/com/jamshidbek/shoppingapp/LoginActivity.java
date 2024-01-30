@@ -10,11 +10,17 @@ import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.jamshidbek.shoppingapp.Base.BaseActivity;
+import com.jamshidbek.shoppingapp.Model.User;
 import com.jamshidbek.shoppingapp.databinding.ActivityLoginBinding;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
@@ -78,7 +84,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
         });
 
 
-        //Eye show hide button logic!
+        //Eye show hide button logic!! ------------------------------------------->
         binding.showHideBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,14 +111,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
             }
         });
 
-        //Travel between Activities
-        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        //Travel between Activities ! --------------------------------------------->
         binding.forgotPswBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +124,38 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        //Login (Main Api) ! --------------------------------------------->
+        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //check if email is valid
+                String email = binding.emailEditText.getText().toString();
+                String password = binding.passwordEditText.getText().toString();
+                //check if email is valid
+                if (!isEmailValid(email))
+                    return;
+                Call<User> call = mainApi.login(new User(email,password));
+                call.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        if (response.isSuccessful()){
+                            User user = response.body();
+                            preferenceManager.setValue("isLoggedin", true);
+                            preferenceManager.setValue("access_token", user.getAccessToken());
+                            preferenceManager.setValue("user", user);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+
+                    }
+                });
             }
         });
     }

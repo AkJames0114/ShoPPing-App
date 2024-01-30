@@ -6,39 +6,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_weight="0"
-    >
-    <ImageView
-        android:id="@+id/backBtn"
-        android:layout_width="39dp"
-        android:layout_marginTop="50dp"
-        android:layout_height="39dp"
-        android:layout_marginLeft="20sp"
-        android:background="@drawable/ic_back_btn"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/loginStarIc"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginLeft="270dp"
-        android:src="@drawable/ic_login_star" />
-</LinearLayout>
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ic_back_btn" />
+
+        <ImageView
+            android:id="@+id/loginStarIc"
+            android:layout_width="46dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_login_star" />
+    </LinearLayout>
 
 
     <TextView
         android:id="@+id/signinText"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_weight="0"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="20dp"
+        android:layout_weight="0"
         android:text="Sign in"
         android:textSize="39dp"
         android:textStyle="bold" />
@@ -46,8 +45,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -64,7 +63,7 @@
                 android:lineSpacingExtra="3.5sp"
                 android:text="Full name"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/signinText" />
@@ -250,7 +249,7 @@
                 android:layout_height="56dp"
                 android:layout_marginLeft="20sp"
                 android:layout_marginTop="9dp"
-                android:layout_marginRight="7dp"
+                android:layout_marginRight="2dp"
                 android:background="@drawable/onboarding_edittext_bg_selector"
                 android:hint="Post code"
                 android:padding="14sp"
@@ -312,16 +311,25 @@
                 android:id="@+id/contentTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="45sp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20sp"
-                android:drawableLeft="@drawable/ic_tick"
                 android:lineSpacingExtra="3.5sp"
-                android:text="   I accept the terms and privacy policy"
+                android:text="I accept the terms and privacy policy"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="normal"
-                app:layout_constraintRight_toLeftOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressEdit1" />
+
+            <ImageView
+                android:id="@+id/tickBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_tick_selector"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/addressEdit1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -333,16 +341,16 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginLeft="20sp"
-        android:layout_marginTop="5dp"
-        android:layout_weight="0"
+        android:layout_marginTop="4dp"
         android:layout_marginRight="20sp"
+        android:layout_marginBottom="3dp"
+        android:layout_weight="0"
         android:background="@drawable/primary_btn_bg"
         android:clickable="true"
         android:gravity="center"
         android:text="Next"
         android:textColor="#ffffff"
-        android:textSize="16sp"
-        android:layout_marginBottom="3dp"/>
+        android:textSize="16sp" />
 </LinearLayout>
 
 
