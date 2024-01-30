@@ -9,7 +9,7 @@ import com.jamshidbek.shoppingapp.Model.User;
 
 public class PreferenceManager implements PreferenceHelper {
 
-    private static String SHARED_PREFERENCE_NAME = BuildConfig.APPLICATION_ID + "local";
+    private static String SHARED_PREFERENCE_NAME = BuildConfig.APPLICATION_ID + ".local";
 
     private SharedPreferences mPreference;
     private static PreferenceManager mInstance;

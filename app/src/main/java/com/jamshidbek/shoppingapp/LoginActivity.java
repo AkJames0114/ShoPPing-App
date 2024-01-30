@@ -144,6 +144,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                         if (response.isSuccessful()){
                             User user = response.body();
                             preferenceManager.setValue("isLoggedin", true);
+                            preferenceManager.setValue("email", email);
+                            preferenceManager.setValue("password", password);
                             preferenceManager.setValue("access_token", user.getAccessToken());
                             preferenceManager.setValue("user", user);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
