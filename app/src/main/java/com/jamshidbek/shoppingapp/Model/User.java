@@ -49,6 +49,14 @@ public class User {
 
     }
 
+    public User() {
+
+    }
+
+    public User(String email, String password, String firstname, String lastname, String phoneNumber, String fullAddress) {
+
+    }
+
     public String getDeviceToken() {
         return deviceToken;
     }

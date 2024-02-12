@@ -2,6 +2,9 @@
 <network-security-config>
 
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">104.236.193.179</domain>
+        <domain includeSubdomains="true">dev-api.shoppingmall.beknumonov.com</domain>
+        <domain includeSubdomains="true">api.annyong.store</domain>
+        <domain includeSubdomains="true">t1.daumcdn.net</domain>
+        <domain includeSubdomains="true">postcode.map.daum.net</domain>
     </domain-config>
 </network-security-config>

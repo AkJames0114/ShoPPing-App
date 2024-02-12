@@ -6,4 +6,31 @@
     </style>
 
     <style name="Theme.ShoPPingApp" parent="Base.Theme.ShoPPingApp" />
+
+    <style name="AppTheme.Onboarding" parent="Base.Theme.ShoPPingApp">
+
+
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.Main" parent="Base.Theme.ShoPPingApp">
+
+
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="ActiveIndicator" parent="">
+        <item name="android:width">@dimen/m3_bottom_nav_item_active_indicator_width</item>
+        <item name="android:height">@dimen/m3_bottom_nav_item_active_indicator_height</item>
+        <item name="marginHorizontal">@dimen/m3_bottom_nav_item_active_indicator_margin_horizontal</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.M3.Comp.NavigationBar.ActiveIndicator.Shape</item>
+        <item name="android:color">@color/ColorPrimary</item>
+    </style>
+
+    <style name="AppTheme.BottomBar" parent="Base.Theme.ShoPPingApp">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="android:textColorSecondary">@color/ColorPrimary</item>
+        <item name="android:colorForeground">@color/ColorPrimary</item>
+
+    </style>
 </resources>

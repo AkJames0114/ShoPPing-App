@@ -3,11 +3,12 @@
     <item
         android:id="@+id/homeTab"
         android:icon="@drawable/ic_home"
+        android:enabled="true"
         android:title="Home" />
     <item
-        android:id="@+id/categoryTab"
-        android:icon="@drawable/ic_category"
-        android:title="Category" />
+        android:id="@+id/productTab"
+        android:icon="@drawable/ic_products"
+        android:title="Products" />
     <item
         android:id="@+id/cartTab"
         android:icon="@drawable/ic_cart"
