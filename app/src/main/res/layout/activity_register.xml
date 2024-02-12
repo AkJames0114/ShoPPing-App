@@ -17,7 +17,7 @@
             android:layout_width="39dp"
             android:layout_height="39dp"
             android:layout_marginLeft="20sp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="43dp"
             android:background="@drawable/ic_back_btn" />
 
         <ImageView
@@ -25,7 +25,7 @@
             android:layout_width="46dp"
             android:layout_height="44dp"
             android:layout_marginLeft="270dp"
-            android:layout_marginTop="47dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/ic_login_star" />
     </LinearLayout>
 
@@ -35,10 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_weight="0"
-        android:text="Sign in"
+        android:text="Sign up"
         android:textSize="39dp"
         android:textStyle="bold" />
 
@@ -54,14 +54,14 @@
 
 
             <TextView
-                android:id="@+id/fullName"
+                android:id="@+id/firstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
                 android:layout_marginTop="14sp"
                 android:layout_marginRight="20sp"
                 android:lineSpacingExtra="3.5sp"
-                android:text="Full name"
+                android:text="Firstname"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
@@ -69,20 +69,50 @@
                 app:layout_constraintTop_toBottomOf="@id/signinText" />
 
             <EditText
-                android:id="@+id/fullnameEditText"
+                android:id="@+id/firstNameET"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginLeft="20sp"
                 android:layout_marginTop="6dp"
                 android:layout_marginRight="20sp"
                 android:background="@drawable/onboarding_edittext_bg_selector"
-                android:hint="Your name"
+                android:hint="Your firstname"
                 android:lineSpacingExtra="4dp"
                 android:padding="16dp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fullName" />
+                app:layout_constraintTop_toBottomOf="@id/firstName" />
+            <TextView
+                android:id="@+id/lastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="14sp"
+                android:layout_marginRight="20sp"
+                android:lineSpacingExtra="3.5sp"
+                android:text="Lastname"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstNameET" />
+
+            <EditText
+                android:id="@+id/lastNameET"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="20sp"
+                android:background="@drawable/onboarding_edittext_bg_selector"
+                android:hint="Your lastname"
+                android:lineSpacingExtra="4dp"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastName" />
 
             <TextView
                 android:id="@+id/emailTextView"
@@ -97,7 +127,7 @@
                 android:textSize="14sp"
                 android:textStyle="normal"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fullnameEditText" />
+                app:layout_constraintTop_toBottomOf="@id/lastNameET" />
 
             <EditText
                 android:id="@+id/emailEditText"
@@ -243,9 +273,9 @@
                 app:layout_constraintTop_toBottomOf="@id/phoneNumEditText" />
 
 
-            <EditText
-                android:id="@+id/postCodeLft"
-                android:layout_width="198dp"
+            <TextView
+                android:id="@+id/tvpostCode"
+                android:layout_width="197dp"
                 android:layout_height="56dp"
                 android:layout_marginLeft="20sp"
                 android:layout_marginTop="9dp"
@@ -259,14 +289,14 @@
                 app:layout_constraintTop_toBottomOf="@id/address" />
 
             <TextView
-                android:id="@+id/postCodeRt"
+                android:id="@+id/btnAddress"
                 android:layout_width="155dp"
                 android:layout_height="56dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="20sp"
-                android:background="@drawable/onboarding_edittext_bg_selector"
-                android:backgroundTint="@color/ColorPrimary"
+                android:background="@drawable/primary_btn_bg"
                 android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
                 android:hint="Post code"
                 android:padding="14dp"
@@ -274,70 +304,102 @@
                 android:textSize="16sp"
                 app:layout_constraintHorizontal_weight="0.5"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/postCodeLft" />
-
-            <EditText
-                android:id="@+id/addressEdit"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="9dp"
-                android:layout_marginRight="20sp"
-                android:background="@drawable/onboarding_edittext_bg_selector"
-                android:hint="Address "
-                android:inputType="textPassword"
-                android:lineSpacingExtra="4sp"
-                android:padding="16dp"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/postCodeLft" />
-
-            <EditText
-                android:id="@+id/addressEdit1"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="9dp"
-                android:layout_marginRight="20sp"
-                android:background="@drawable/onboarding_edittext_bg_selector"
-                android:hint="Address "
-                android:inputType="textPassword"
-                android:lineSpacingExtra="4sp"
-                android:padding="16dp"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/addressEdit" />
-
+                app:layout_constraintTop_toTopOf="@id/tvpostCode" />
 
             <TextView
-                android:id="@+id/contentTxt"
+                android:id="@+id/tvAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="45sp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20sp"
-                android:lineSpacingExtra="3.5sp"
-                android:text="I accept the terms and privacy policy"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addressEdit1" />
-
-            <ImageView
-                android:id="@+id/tickBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginLeft="20sp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/ic_tick_selector"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addressEdit1" />
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="20sp"
+                android:background="@drawable/onboarding_edittext_bg_selector"
+                android:hint="Address "
+                android:inputType="textPassword"
+                android:lineSpacingExtra="4sp"
+                android:padding="16dp"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvpostCode" />
+
+            <EditText
+                android:id="@+id/etAddressDetatils"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="20sp"
+                android:background="@drawable/onboarding_edittext_bg_selector"
+                android:hint="Address "
+                android:inputType="textPassword"
+                android:lineSpacingExtra="4sp"
+                android:padding="16dp"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/contentTxt"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="45sp"-->
+<!--                android:padding="15dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="20sp"-->
+<!--                android:lineSpacingExtra="3.5sp"-->
+<!--                android:text="I accept the terms and privacy policy"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="normal"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/etAddressDetatils" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/agreementBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10sp"-->
+<!--                android:padding="15dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:src="@drawable/ic_tick_selector"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/etAddressDetatils" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/agreementBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tick_selector"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/aggrementTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:lineSpacingExtra="3.5sp"
+                android:text="I accept the terms and privacy policy"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
 
     <TextView
-        android:id="@+id/nextBtn"
+        android:id="@+id/registerBtn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginLeft="20sp"
@@ -348,9 +410,8 @@
         android:background="@drawable/primary_btn_bg"
         android:clickable="true"
         android:gravity="center"
-        android:text="Next"
+        android:text="Register"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 </LinearLayout>
-
-
+</LinearLayout>
