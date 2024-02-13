@@ -54,7 +54,7 @@
 
 
             <TextView
-                android:id="@+id/firstName"
+                android:id="@+id/firstnamePf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
@@ -82,9 +82,9 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstName" />
+                app:layout_constraintTop_toBottomOf="@id/firstnamePf" />
             <TextView
-                android:id="@+id/lastName"
+                android:id="@+id/lastnamePf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
@@ -112,7 +112,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lastName" />
+                app:layout_constraintTop_toBottomOf="@id/lastnamePf" />
 
             <TextView
                 android:id="@+id/emailTextView"
@@ -252,7 +252,6 @@
                 android:layout_marginRight="20sp"
                 android:background="@drawable/onboarding_edittext_bg_selector"
                 android:hint="Your phone number "
-                android:inputType="textPassword"
                 android:lineSpacingExtra="4sp"
                 android:padding="16dp"
                 android:textSize="16sp"
@@ -315,7 +314,6 @@
                 android:layout_marginRight="20sp"
                 android:background="@drawable/onboarding_edittext_bg_selector"
                 android:hint="Address "
-                android:inputType="textPassword"
                 android:lineSpacingExtra="4sp"
                 android:padding="16dp"
                 android:textSize="16sp"
@@ -330,7 +328,6 @@
                 android:layout_marginRight="20sp"
                 android:background="@drawable/onboarding_edittext_bg_selector"
                 android:hint="Address "
-                android:inputType="textPassword"
                 android:lineSpacingExtra="4sp"
                 android:padding="16dp"
                 android:textSize="16sp"

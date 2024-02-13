@@ -19,6 +19,7 @@ import com.jamshidbek.shoppingapp.Base.BaseFragment;
 import com.jamshidbek.shoppingapp.Model.Banner;
 import com.jamshidbek.shoppingapp.Model.Product;
 import com.jamshidbek.shoppingapp.adapter.BannerViewPagerAdapter;
+import com.jamshidbek.shoppingapp.adapter.IndicatorAdapter;
 import com.jamshidbek.shoppingapp.adapter.ProductListAdapter;
 import com.jamshidbek.shoppingapp.databinding.FragmentHomeBinding;
 
@@ -49,7 +50,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
         bannerArrayList = new ArrayList<>();
         productArrayList = new ArrayList<>();
         bannerViewPagerAdapter = new BannerViewPagerAdapter(getActivity(), bannerArrayList);
-        indicatorAdapter = new IndicatorAdapter(bannerArrayList.size());
+        indicatorAdapter = new IndicatorAdapter (bannerArrayList.size());
         productListAdapter = new ProductListAdapter(productArrayList);
 
         loadBanners();

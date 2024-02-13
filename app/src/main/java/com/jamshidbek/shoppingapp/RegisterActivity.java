@@ -163,7 +163,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
                                     preferenceManager.setValue("firstname", newUser.getFirst_name());
                                     preferenceManager.setValue("lastname", newUser.getLast_name());
                                     preferenceManager.setValue("email", newUser.getEmail());
-                                    preferenceManager.setValue("password", newUser.getPassword());
+                                    preferenceManager.setValue("password", password);
                                     preferenceManager.setValue("phoneNumber", newUser.getPhoneNumber());
                                     preferenceManager.setValue("address", newUser.getAddress());
                                     moveToMain();

@@ -19,7 +19,7 @@ public class User {
     @SerializedName("last_name")
     private String last_name;
 
-    @SerializedName("phoneNumber")
+    @SerializedName("phone_number")
     private String phoneNumber;
 
     @SerializedName("address")
@@ -53,8 +53,14 @@ public class User {
 
     }
 
-    public User(String email, String password, String firstname, String lastname, String phoneNumber, String fullAddress) {
+    public User(String email, String password, String firstname, String lastname, String phoneNumber, String address) {
 
+        this.email = email;
+        this.password = password;
+        this.first_name = firstname;
+        this.last_name = lastname;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     public String getDeviceToken() {

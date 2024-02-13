@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
-    private static String baseUrl = "http://104.236.193.179";
+    private static String baseUrl = "http://api.annyong.store";
 
     private static Retrofit mRetrofit;
 

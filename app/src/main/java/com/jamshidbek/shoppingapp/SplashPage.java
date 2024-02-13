@@ -32,7 +32,7 @@ public class SplashPage extends BaseActivity<ActivitySplashPageBinding> {
                         Intent intent = new Intent(SplashPage.this, MainActivity.class);
                         startActivity(intent);
                     }else {
-                        Intent intent = new Intent(SplashPage.this, MainActivity.class);
+                        Intent intent = new Intent(SplashPage.this, LoginActivity.class);
                         startActivity(intent);
                     }
                 }

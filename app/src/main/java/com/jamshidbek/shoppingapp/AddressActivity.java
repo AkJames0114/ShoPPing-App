@@ -25,7 +25,7 @@ public class AddressActivity extends BaseActivity<ActivityAddressBinding> {
 
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        binding.webView.loadUrl("http://address.shoppingmall.beknumonov.com/");
+        binding.webView.loadUrl("http://address.annyong.store/");
         binding.webView.addJavascriptInterface(new WebAppInterface(), "CallbackWebInterface");
 
     }
