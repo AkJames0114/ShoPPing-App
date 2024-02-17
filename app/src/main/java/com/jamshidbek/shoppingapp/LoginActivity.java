@@ -76,10 +76,10 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 //                }
 
                 binding.icVerifiedEmail.setVisibility(isEmailValid(email) ? View.VISIBLE : View.INVISIBLE);
-                if (email.length()== 15){
-                    binding.passwordEditText.requestFocus();/*bu function etPasswordda 10ta characterdan keyn
-                                                           ozi pasgi qismga auto otishni taminlaydi*/
-                }
+//                if (email.length()== 15){
+//                    binding.passwordEditText.requestFocus();/*bu function etPasswordda 10ta characterdan keyn
+//                                                           ozi pasgi qismga auto otishni taminlaydi*/
+//                }
             }
         });
 

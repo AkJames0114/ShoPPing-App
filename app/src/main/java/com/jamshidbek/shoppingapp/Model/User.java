@@ -24,6 +24,8 @@ public class User {
 
     @SerializedName("address")
     private String address;
+    @SerializedName("img")
+    private String img;
 
     @SerializedName("device_token")
     private String deviceToken;
@@ -31,16 +33,29 @@ public class User {
     @SerializedName("access_token")
     private String accessToken;
 
-    public User(Integer id, String email, String password, String first_name, String last_name, String phoneNumber, String address, String deviceToken, String accessToken) {
+
+
+
+
+    public User(Integer id, String email, String password, String first_name, String img, String last_name, String phoneNumber, String address, String deviceToken, String accessToken) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.img = img;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.deviceToken = deviceToken;
         this.accessToken = accessToken;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public User(String email, String password) {

@@ -32,7 +32,7 @@ public interface MainApi {
     Call<JsonObject> verifyEmailWithCode(@Body VerifyEmail verifyEmail);
     */
 
-    @GET("/v1/classificiation/")
+    @GET("/v1/classification/")
     Call<ArrayList<Classification>> getClassifications();
 
     @GET("/v1/classification/{id}/category/")
