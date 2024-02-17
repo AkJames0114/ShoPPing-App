@@ -3,7 +3,9 @@ package com.jamshidbek.shoppingapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -29,6 +31,10 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
     protected ActivityLoginBinding inflateViewBinding(LayoutInflater inflater) {
         return ActivityLoginBinding.inflate(inflater);
     }
+
+
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -148,6 +154,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                             preferenceManager.setValue("password", password);
                             preferenceManager.setValue("access_token", user.getAccessToken());
                             preferenceManager.setValue("user", user);
+
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                         }
@@ -161,6 +168,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
             }
         });
     }
+
+
 
     private boolean isEmailValid(String email) {
         boolean isValid = false;
