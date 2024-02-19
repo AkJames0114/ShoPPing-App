@@ -229,7 +229,7 @@
 
 
             <TextView
-                android:id="@+id/detailsBtn"
+                android:id="@+id/tvDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -257,7 +257,7 @@
                 android:textColor="#777a7c"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                app:layout_constraintTop_toBottomOf="@+id/detailsBtn"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetails"
                 tools:text="This is a short text that provides a quick overview of the product. They can be used as a standalone piece of content, or they can be used as a teaser to encourage website visitors to click on a longer description.This is a short text that provides a quick overview of the product. They can be used as a standalone piece of content, or they can be used as a teaser to encourage website visitors to click on a longer description.This is a short text that provides a quick overview of the product. They can be used as a standalone piece of content, or they can be used as a teaser to encourage website visitors to click on a longer description." />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

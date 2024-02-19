@@ -10,10 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.viewbinding.ViewBinding;
+/*
+ 1. Creating Dialog fragment (by extending Base Dialog from Dialog Fragment)
+ smaller version of the the fragment which help to creates small pop ups!
+
+ 2. Binding is done with parent.
+
+ */
 
 public abstract class BaseDialog<VB extends ViewBinding> extends DialogFragment {
 
-    VB binding;
+    protected VB binding;
     protected abstract VB inflateView(LayoutInflater inflater, ViewGroup parent, boolean attachedToRoot);
 
 

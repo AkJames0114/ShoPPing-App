@@ -44,6 +44,15 @@ public class Product implements Serializable {
     @SerializedName("images")
     @Expose
     private ArrayList<ProductImage> images;
+    @SerializedName("color_options")
+    @Expose
+    private ArrayList<ColorOption> colorOptions;
+    @SerializedName("size_options")
+    @Expose
+    private ArrayList<SizeOption> sizeOptions;
+    @SerializedName("options")
+    @Expose
+    private ArrayList<Option> options;
     @SerializedName("is_active")
     @Expose
     private boolean isActive;
@@ -90,6 +99,29 @@ public class Product implements Serializable {
         this.isActive = isActive;
         this.brand = brand;
         this.madeIn = madeIn;
+    }
+
+    public ArrayList<ColorOption> getColorOptions() {
+        return colorOptions;
+    }
+
+    public void setColorOptions(ArrayList<ColorOption> colorOptions) {
+        this.colorOptions = colorOptions;
+    }
+
+    public ArrayList<SizeOption> getSizeOptions() {
+        return sizeOptions;
+    }
+
+    public void setSizeOptions(ArrayList<SizeOption> sizeOptions) {
+        this.sizeOptions = sizeOptions;
+    }
+    public ArrayList<Option> getOptions() {
+        return options;
+    }
+
+    public void setOptions(ArrayList<Option> options) {
+        this.options = options;
     }
 
     public ArrayList<ProductImage> getImages() {
@@ -154,6 +186,8 @@ public class Product implements Serializable {
     public int getQuantity() {
         return quantity;
     }
+
+
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
