@@ -171,12 +171,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#e8e8e8"
-                app:layout_constraintBottom_toTopOf="@+id/profileAddress"
+                app:layout_constraintBottom_toTopOf="@+id/tvColor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
 
             <TextView
-                android:id="@+id/profileAddress"
+                android:id="@+id/tvColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
@@ -199,11 +199,11 @@
                 android:background="#e8e8e8"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profileAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/tvColor" />
 
 
             <TextView
-                android:id="@+id/orders"
+                android:id="@+id/tvSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -217,7 +217,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profileAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/tvColor" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -225,11 +225,11 @@
                 android:background="#e8e8e8"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/orders" />
+                app:layout_constraintTop_toBottomOf="@+id/tvSize" />
 
 
             <TextView
-                android:id="@+id/settings"
+                android:id="@+id/detailsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -243,7 +243,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/orders" />
+                app:layout_constraintTop_toBottomOf="@+id/tvSize" />
 
             <TextView
                 android:id="@+id/productDetails"
@@ -257,7 +257,7 @@
                 android:textColor="#777a7c"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                app:layout_constraintTop_toBottomOf="@+id/settings"
+                app:layout_constraintTop_toBottomOf="@+id/detailsBtn"
                 tools:text="This is a short text that provides a quick overview of the product. They can be used as a standalone piece of content, or they can be used as a teaser to encourage website visitors to click on a longer description.This is a short text that provides a quick overview of the product. They can be used as a standalone piece of content, or they can be used as a teaser to encourage website visitors to click on a longer description.This is a short text that provides a quick overview of the product. They can be used as a standalone piece of content, or they can be used as a teaser to encourage website visitors to click on a longer description." />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

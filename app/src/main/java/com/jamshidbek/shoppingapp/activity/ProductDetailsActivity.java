@@ -2,9 +2,11 @@ package com.jamshidbek.shoppingapp.activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -16,6 +18,7 @@ import com.jamshidbek.shoppingapp.Model.ProductImage;
 import com.jamshidbek.shoppingapp.adapter.IndicatorAdapter;
 import com.jamshidbek.shoppingapp.adapter.ProductImageViewPagerAdapter;
 import com.jamshidbek.shoppingapp.databinding.ActivityProductDetailsBinding;
+import com.jamshidbek.shoppingapp.fragments.ColorDialog;
 
 import java.util.ArrayList;
 
@@ -75,6 +78,20 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
         binding.productPriceCurrent.setText(product.getPriceCurrent());
         binding.productPriceOriginal.setText(product.getPriceOriginal());
         binding.productDetails.setText(product.getDescription());
+
+        binding.tvColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ColorDialog colorDialog = new ColorDialog();
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                ft.addToBackStack(null);
+
+                colorDialog.show(ft, "dialog");
+
+            }
+        });
 
     }
 
