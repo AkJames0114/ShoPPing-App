@@ -157,7 +157,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
                             public void onResponse(Call<User> call, Response<User> response) {
                                 if (response.isSuccessful()) {
                                     User newUser = response.body();
-                                    preferenceManager.setValue("isLogin", true);
+                                    preferenceManager.setValue("isLoggedIn", true);
                                     preferenceManager.setValue("access_token", newUser.getAccessToken());
                                     preferenceManager.setValue("id", newUser.getId());
                                     preferenceManager.setValue("firstname", newUser.getFirst_name());

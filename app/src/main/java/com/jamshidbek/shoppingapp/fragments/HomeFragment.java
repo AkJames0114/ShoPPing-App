@@ -29,6 +29,39 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/*
+     TODO LIST
+    1. Add RecyclerView to fragment_home.xml
+    2. Create ProductListAdapter
+        1.Create item_product.xml
+        2.Create product array list
+        3.Create CartViewHolder
+        4.Bind()
+    3. Create IndicatorAdapter for BannerList
+        1.Create item_dot.xml
+        2.Create banner array list
+        3.Create CartViewHolder
+        4.Bind()
+    3. Create Banner and Product Model
+    4. Add method to Main Api
+
+    Inside Cart Fragment:
+    5. onCreate()
+        initialize productArrayList, bannerArrayList and productListAdapter, indicatorAdapter and bannerViewPagerAdapter
+    6. onViewCreated()
+        set LayoutManager to RecyclerView.
+        set adapter to RecyclerView
+        popularProductRecyclerView binding using productListArraylist
+        onPageSelectedScroll
+                1.indicatorAdapter.setSelectedDotPosition();
+                2.indicatorAdapter.notifyDataSetChanged();
+    7. load Banners() and PopularProductList
+        add banner to bannerArrayList
+        adapter.notifyDataSetChanged();
+        add products to productsArrayList
+        adapter.notifyDataSetChanged();
+
+ */
 public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
 
     private ArrayList<Banner> bannerArrayList;

@@ -13,6 +13,7 @@ import com.jamshidbek.shoppingapp.Base.BaseFragment;
 import com.jamshidbek.shoppingapp.Model.Banner;
 import com.jamshidbek.shoppingapp.databinding.FragmentBannerBinding;
 
+
 public class BannerFragment extends BaseFragment<FragmentBannerBinding> {
     @Override
     protected FragmentBannerBinding inflateView(LayoutInflater inflater, ViewGroup parent, boolean toAttach) {

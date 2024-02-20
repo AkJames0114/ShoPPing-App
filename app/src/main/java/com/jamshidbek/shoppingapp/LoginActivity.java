@@ -149,9 +149,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                     public void onResponse(Call<User> call, Response<User> response) {
                         if (response.isSuccessful()){
                             User user = response.body();
-                            preferenceManager.setValue("isLoggedin", true);
+                            preferenceManager.setValue("isLoggedIn", true);
                             preferenceManager.setValue("email", email);
                             preferenceManager.setValue("password", password);
+                            preferenceManager.setValue("lastname", user.getLast_name());
+                            preferenceManager.setValue("firstname", user.getFirst_name());
                             preferenceManager.setValue("access_token", user.getAccessToken());
                             preferenceManager.setValue("user", user);
 

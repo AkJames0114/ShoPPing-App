@@ -23,7 +23,7 @@ public class SplashPage extends BaseActivity<ActivitySplashPageBinding> {
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
-            boolean isLoggedIn = (boolean) preferenceManager.getValue(Boolean.class, "isLoggeIn", false);
+            boolean isLoggedIn = (boolean) preferenceManager.getValue(Boolean.class, "isLoggedIn", false);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -32,7 +32,7 @@ public class SplashPage extends BaseActivity<ActivitySplashPageBinding> {
                         Intent intent = new Intent(SplashPage.this, MainActivity.class);
                         startActivity(intent);
                     }else {
-                        Intent intent = new Intent(SplashPage.this, MainActivity.class);
+                        Intent intent = new Intent(SplashPage.this, LoginActivity.class);
                         startActivity(intent);
                     }
                 }
