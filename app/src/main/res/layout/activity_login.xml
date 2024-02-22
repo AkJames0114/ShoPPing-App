@@ -121,7 +121,7 @@
         android:clickable="true"
         android:lineSpacingExtra="8sp"
         android:text="Forgot password?"
-        android:textColor="@color/ColorPrimary"
+        android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         android:textStyle="normal"
         app:layout_constraintRight_toRightOf="parent"

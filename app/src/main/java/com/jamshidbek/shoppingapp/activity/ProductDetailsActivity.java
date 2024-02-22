@@ -10,9 +10,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-
 import com.jamshidbek.shoppingapp.Base.BaseActivity;
 import com.jamshidbek.shoppingapp.Base.RequestCallback;
+import com.jamshidbek.shoppingapp.Model.CartRequest;
 import com.jamshidbek.shoppingapp.Model.ColorOption;
 import com.jamshidbek.shoppingapp.Model.Option;
 import com.jamshidbek.shoppingapp.Model.Product;
@@ -35,11 +35,13 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
     private ProductImageViewPagerAdapter viewPagerAdapter;
     private boolean isColorSelected = false;
     private boolean isSizeSelected = false;
-
-    private final ArrayList<SizeOption> filteredSizeOptionArrayList = new ArrayList<>();
+    private ColorOption selectColorOption;
+    private SizeOption selectSizeOption;
+    private int quantity = 1;
+    private ArrayList<SizeOption> filterSizeOptionArrayList = new ArrayList<>();
 
     private IndicatorAdapter indicatorAdapter;
-    private final ArrayList<ProductImage> productImageArrayList = new ArrayList<>();
+    private ArrayList<ProductImage> productImageArrayList = new ArrayList<>();
 
     @Override
     protected ActivityProductDetailsBinding inflateViewBinding(LayoutInflater inflater) {
@@ -87,24 +89,80 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
         binding.productPriceOriginal.setText(product.getPriceOriginal());
         binding.productDetails.setText(product.getDescription());
 
+        binding.addToCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectColorOption == null) {
+                    showToast("Please select color!");
+                    return;
+                }
+
+                if (selectSizeOption == null) {
+                    showToast("Please select size!");
+                    return;
+                }
+                Option selectOption = null;
+                for (Option option : product.getOptions()) {
+                    if (option.getColorOption().getId() == selectColorOption.getId() && option.getSizeOption().getId() == selectSizeOption.getId()) {
+                        selectOption = option;
+                    }
+                }
+
+                if (selectOption == null)
+                    return;
+
+                addProductToCart(new CartRequest(product.getId(), selectOption.getId(), quantity));
+
+
+            }
+        });
+
+        binding.decrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity == 1)
+                    return;
+
+                quantity--;
+                binding.tvQuantity.setText(String.valueOf(quantity));
+            }
+        });
+        binding.increase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity == 10)
+                    return;
+
+                quantity++;
+                binding.tvQuantity.setText(String.valueOf(quantity));
+            }
+        });
+
         binding.tvColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OptionDialog optionDialog = new OptionDialog(); //Dialog created
+                OptionDialog optionDialog = new OptionDialog();
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.addToBackStack(null);
-                optionDialog.setColorOptionArrayList(product.getColorOptions()); //Before Dialog pop up, we giving it the color opt arraylist.
+                optionDialog.setColorOptionArrayList(product.getColorOptions());
+                optionDialog.setSelectColorOption(selectColorOption);
+
                 optionDialog.setOptionItemListener(new OptionDialog.OptionItemListener() {
                     @Override
                     public void onColorItemSelected(ColorOption colorOption) {
+                        selectColorOption = colorOption;
                         isColorSelected = true;
-                        filteredSizeOptionArrayList.clear();
+                        filterSizeOptionArrayList.clear();
+
+                        binding.ivColor.setVisibility(View.INVISIBLE);
+                        binding.tvSelectColor.setVisibility(View.VISIBLE);
+                        binding.tvSelectColor.setText(colorOption.getTitle());
 
                         product.getOptions().forEach(new Consumer<Option>() {
                             @Override
                             public void accept(Option option) {
-                                if (option.getColorOption().equals(colorOption)){
-                                    filteredSizeOptionArrayList.add(option.getSizeOption());
+                                if (option.getColorOption().equals(colorOption)) {
+                                    filterSizeOptionArrayList.add(option.getSizeOption());
                                 }
                             }
                         });
@@ -115,19 +173,20 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
 
                     }
                 });
-                optionDialog.show(ft, "dialog_color"); //Dialog pops up!
-
+                optionDialog.show(ft, "dialog_color");
             }
         });
+
         binding.tvSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isColorSelected) {
-                    OptionDialog optionDialog = new OptionDialog();
+                    OptionDialog sizeDialog = new OptionDialog();
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                     ft.addToBackStack(null);
-                    optionDialog.setSizeOptionArrayList(filteredSizeOptionArrayList);
-                    optionDialog.setOptionItemListener(new OptionDialog.OptionItemListener() {
+                    sizeDialog.setSizeOptionArrayList(filterSizeOptionArrayList);
+                    sizeDialog.setSelectSizeOption(selectSizeOption);
+                    sizeDialog.setOptionItemListener(new OptionDialog.OptionItemListener() {
                         @Override
                         public void onColorItemSelected(ColorOption colorOption) {
 
@@ -135,11 +194,15 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
 
                         @Override
                         public void onSizeItemSelected(SizeOption sizeOption) {
+                            selectSizeOption = sizeOption;
                             isSizeSelected = true;
+                            binding.ivSize.setVisibility(View.INVISIBLE);
+                            binding.tvSelectSize.setVisibility(View.VISIBLE);
+                            binding.tvSelectSize.setText(sizeOption.getTitle());
                         }
                     });
-                    optionDialog.show(ft, "dialog_size");
-                }else {
+                    sizeDialog.show(ft, "dialog_size");
+                } else {
                     Toast.makeText(ProductDetailsActivity.this, "Please select color first", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -147,6 +210,23 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
 
     }
 
+    private void addProductToCart(CartRequest cartRequest) {
+
+        Call<CartRequest> call = mainApi.addProductToCart(cartRequest);
+        call.enqueue(new RequestCallback<CartRequest>() {
+            @Override
+            protected void onResponseSuccess(Call<CartRequest> call, Response<CartRequest> response) {
+                showToast("Product is successfully added to cart!");
+            }
+
+            @Override
+            protected void onResponseFailed(Call<CartRequest> call, Throwable t) {
+                showToast(t.getMessage());
+            }
+        });
+
+
+    }
 
     private void loadProductDetails() {
         Call<Product> call = mainApi.getProductDetails(product.getId());
@@ -168,6 +248,7 @@ public class ProductDetailsActivity extends BaseActivity<ActivityProductDetailsB
     @Override
     public void onColorItemSelected(ColorOption colorOption) {
         isColorSelected = true;
+
     }
 
     @Override

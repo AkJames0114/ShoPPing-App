@@ -1,6 +1,8 @@
 package com.jamshidbek.shoppingapp.Base;
 
 import com.jamshidbek.shoppingapp.Model.Banner;
+import com.jamshidbek.shoppingapp.Model.Cart;
+import com.jamshidbek.shoppingapp.Model.CartRequest;
 import com.jamshidbek.shoppingapp.Model.Category;
 import com.jamshidbek.shoppingapp.Model.Classification;
 import com.jamshidbek.shoppingapp.Model.Product;
@@ -57,4 +59,13 @@ public interface MainApi {
 
     @GET("/v1/product/{id}/")
     Call<Product> getProductDetails(@Path("id") int productId);
+
+    @POST("/v1/cart/")
+    Call<CartRequest> addProductToCart(@Body CartRequest cartRequest);
+
+    @GET("/v1/cart/")
+    Call<ArrayList<Cart>> getMyCart();
+
+//    @POST("/v1/cart/order/")
+//    Call<Order> orderCarts(@Body PreOrder preOrder);
 }

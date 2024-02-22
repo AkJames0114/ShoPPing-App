@@ -24,6 +24,18 @@ public class OptionListAdapter extends BaseAdapter {
 
     private OptionDialog.OptionItemListener optionItemListener;
 
+    private ColorOption selectColorOption;
+    private SizeOption selectSizeOption;
+
+    public void setSelectColorOption(ColorOption selectColorOption) {
+        this.selectColorOption = selectColorOption;
+    }
+
+    public void setSelectSizeOption(SizeOption selectSizeOption) {
+        this.selectSizeOption = selectSizeOption;
+    }
+
+
     public void setOptionItemListener(OptionDialog.OptionItemListener optionItemListener) {
         this.optionItemListener = optionItemListener;
     }
@@ -79,12 +91,24 @@ public class OptionListAdapter extends BaseAdapter {
             if (colorOptionArrayList != null && sizeOptionArrayList == null) {
                 ColorOption colorOption = colorOptionArrayList.get(position);
                 binding.tvOptionTitle.setText(colorOption.getTitle());
+                if (selectColorOption != null) {
+//                    if (selectColorOption.getId() == colorOption.getId())
+//                        binding.checked.setVisibility(View.VISIBLE);
+//                    else
+//                        binding.checked.setVisibility(View.VISIBLE);
+
+                    binding.checked.setVisibility(selectColorOption.getId() == colorOption.getId() ? View.VISIBLE : View.INVISIBLE);
+                }
+
             } else if (colorOptionArrayList == null && sizeOptionArrayList != null) {
                 SizeOption sizeOption = sizeOptionArrayList.get(position);
                 binding.tvOptionTitle.setText(sizeOption.getTitle());
+                if (selectSizeOption != null) {
+                    binding.checked.setVisibility(selectSizeOption.getId() == sizeOption.getId() ? View.VISIBLE : View.INVISIBLE);
+                }
             }
-
 
         }
     }
+
 }

@@ -24,13 +24,13 @@
         <item name="android:height">@dimen/m3_bottom_nav_item_active_indicator_height</item>
         <item name="marginHorizontal">@dimen/m3_bottom_nav_item_active_indicator_margin_horizontal</item>
         <item name="shapeAppearance">@style/ShapeAppearance.M3.Comp.NavigationBar.ActiveIndicator.Shape</item>
-        <item name="android:color">@color/ColorPrimary</item>
+        <item name="android:color">@color/colorPrimary</item>
     </style>
 
     <style name="AppTheme.BottomBar" parent="Base.Theme.ShoPPingApp">
-        <item name="colorPrimary">@color/ColorPrimary</item>
-        <item name="android:textColorSecondary">@color/ColorPrimary</item>
-        <item name="android:colorForeground">@color/ColorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+        <item name="android:colorForeground">@color/colorPrimary</item>
 
     </style>
 </resources>

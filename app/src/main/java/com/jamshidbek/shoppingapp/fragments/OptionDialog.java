@@ -32,6 +32,15 @@ public class OptionDialog extends BaseDialog<DialogColorBinding> {
     private ArrayList<SizeOption> sizeOptionArrayList;
     private OptionItemListener optionItemListener;
 
+    private ColorOption selectColorOption;
+    private SizeOption selectSizeOption;
+    public void setSelectColorOption(ColorOption selectColorOption) {
+        this.selectColorOption = selectColorOption;
+    }
+
+    public void setSelectSizeOption(SizeOption selectSizeOption) {
+        this.selectSizeOption = selectSizeOption;
+    }
     public void setOptionItemListener(OptionItemListener optionItemListener) {
         this.optionItemListener = optionItemListener;
     }
@@ -58,6 +67,8 @@ public class OptionDialog extends BaseDialog<DialogColorBinding> {
         else
             binding.title.setText("Size");
         optionListAdapter =new OptionListAdapter(colorOptionArrayList, sizeOptionArrayList);
+        optionListAdapter.setSelectColorOption(selectColorOption);
+        optionListAdapter.setSelectSizeOption(selectSizeOption);
         optionListAdapter.setOptionItemListener(new OptionItemListener() {
             @Override
             public void onColorItemSelected(ColorOption colorOption) {
