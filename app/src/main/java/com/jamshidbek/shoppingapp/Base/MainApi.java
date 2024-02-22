@@ -5,6 +5,8 @@ import com.jamshidbek.shoppingapp.Model.Cart;
 import com.jamshidbek.shoppingapp.Model.CartRequest;
 import com.jamshidbek.shoppingapp.Model.Category;
 import com.jamshidbek.shoppingapp.Model.Classification;
+import com.jamshidbek.shoppingapp.Model.Order;
+import com.jamshidbek.shoppingapp.Model.PreOrder;
 import com.jamshidbek.shoppingapp.Model.Product;
 import com.jamshidbek.shoppingapp.Model.Subproduct;
 import com.jamshidbek.shoppingapp.Model.User;
@@ -66,6 +68,6 @@ public interface MainApi {
     @GET("/v1/cart/")
     Call<ArrayList<Cart>> getMyCart();
 
-//    @POST("/v1/cart/order/")
-//    Call<Order> orderCarts(@Body PreOrder preOrder);
+    @POST("/v1/cart/order/")
+    Call<Order> orderCarts(@Body PreOrder preOrder);
 }

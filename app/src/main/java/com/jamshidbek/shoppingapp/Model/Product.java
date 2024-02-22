@@ -44,12 +44,16 @@ public class Product implements Serializable {
     @SerializedName("images")
     @Expose
     private ArrayList<ProductImage> images;
+
     @SerializedName("color_options")
     @Expose
     private ArrayList<ColorOption> colorOptions;
+
     @SerializedName("size_options")
     @Expose
     private ArrayList<SizeOption> sizeOptions;
+
+
     @SerializedName("options")
     @Expose
     private ArrayList<Option> options;
@@ -116,13 +120,6 @@ public class Product implements Serializable {
     public void setSizeOptions(ArrayList<SizeOption> sizeOptions) {
         this.sizeOptions = sizeOptions;
     }
-    public ArrayList<Option> getOptions() {
-        return options;
-    }
-
-    public void setOptions(ArrayList<Option> options) {
-        this.options = options;
-    }
 
     public ArrayList<ProductImage> getImages() {
         return images;
@@ -152,6 +149,14 @@ public class Product implements Serializable {
         return description;
     }
 
+    public ArrayList<Option> getOptions() {
+        return options;
+    }
+
+    public void setOptions(ArrayList<Option> options) {
+        this.options = options;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -167,6 +172,17 @@ public class Product implements Serializable {
     public String getPriceCurrent() {
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         return decimalFormat.format(priceCurrent) + "₩";
+    }
+
+    public int getPriceCurrentAsInt() {
+        return priceCurrent;
+    }
+
+    public String getProductTotalPrice(int quantity) {
+        int total = quantity * priceCurrent;
+
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        return decimalFormat.format(total) + "₩";
     }
 
     public void setPriceCurrent(int priceCurrent) {
@@ -186,8 +202,6 @@ public class Product implements Serializable {
     public int getQuantity() {
         return quantity;
     }
-
-
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
