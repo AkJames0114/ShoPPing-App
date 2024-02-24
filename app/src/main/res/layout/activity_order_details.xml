@@ -42,7 +42,7 @@
 
     <TextView
         android:id="@+id/orderNum"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -59,7 +59,7 @@
 
     <TextView
         android:id="@+id/tvData"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -72,12 +72,12 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="2024-02-24-8"
-        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintTop_toTopOf="@id/orderNum"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
         android:id="@+id/orderStatus"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -94,7 +94,7 @@
 
     <TextView
         android:id="@+id/tvStatus"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -107,13 +107,13 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="Pending"
-        app:layout_constraintTop_toBottomOf="@id/tvData"
+        app:layout_constraintTop_toTopOf="@id/orderStatus"
         app:layout_constraintRight_toRightOf="parent"/>
 
 
     <TextView
         android:id="@+id/payment"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -130,7 +130,7 @@
 
     <TextView
         android:id="@+id/tvPayment"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -143,13 +143,13 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="Paid"
-        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintTop_toTopOf="@id/payment"
         app:layout_constraintRight_toRightOf="parent"/>
 
 
     <TextView
         android:id="@+id/totalPrice"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -166,7 +166,7 @@
 
     <TextView
         android:id="@+id/tvTotalPrice"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -179,13 +179,13 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="320,000 Won"
-        app:layout_constraintTop_toBottomOf="@id/tvPayment"
+        app:layout_constraintTop_toTopOf="@id/totalPrice"
         app:layout_constraintRight_toRightOf="parent"/>
 
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -202,7 +202,7 @@
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -215,13 +215,13 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="Jamshidbek"
-        app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+        app:layout_constraintTop_toTopOf="@id/name"
         app:layout_constraintRight_toRightOf="parent"/>
 
 
     <TextView
         android:id="@+id/phoneNum"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -238,7 +238,7 @@
 
     <TextView
         android:id="@+id/tvPhoneNum"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -251,13 +251,13 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="010-2366-1401"
-        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/phoneNum"
         app:layout_constraintRight_toRightOf="parent"/>
 
 
     <TextView
         android:id="@+id/address"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -274,7 +274,7 @@
 
     <TextView
         android:id="@+id/tvAddress"
-        android:layout_width="174dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
@@ -287,7 +287,7 @@
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="Address"
-        app:layout_constraintTop_toBottomOf="@id/tvPhoneNum"
+        app:layout_constraintTop_toTopOf="@id/address"
         app:layout_constraintRight_toRightOf="parent"/>
 
 
