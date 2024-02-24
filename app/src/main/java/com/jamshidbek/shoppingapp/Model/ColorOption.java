@@ -4,7 +4,9 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ColorOption  {
+import java.io.Serializable;
+
+public class ColorOption  implements Serializable {
 
     @SerializedName("id")
     private int id;

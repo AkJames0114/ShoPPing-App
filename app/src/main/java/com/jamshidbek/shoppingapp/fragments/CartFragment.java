@@ -16,6 +16,7 @@ import com.jamshidbek.shoppingapp.Base.RequestCallback;
 import com.jamshidbek.shoppingapp.Model.Cart;
 import com.jamshidbek.shoppingapp.Model.Order;
 import com.jamshidbek.shoppingapp.Model.PreOrder;
+import com.jamshidbek.shoppingapp.activity.OrderDetailsActivity;
 import com.jamshidbek.shoppingapp.adapter.CartListAdapter;
 import com.jamshidbek.shoppingapp.databinding.FragmentCartBinding;
 
@@ -129,24 +130,24 @@ public class CartFragment extends BaseFragment<FragmentCartBinding> {
                 if (count == 0)
                     return;
 
-//                PreOrder preOrder = new PreOrder(cartIds);
-//                Call<Order> call = parent.mainApi.orderCarts(preOrder);
-//                call.enqueue(new RequestCallback<Order>() {
-//                    @Override
-//                    protected void onResponseSuccess(Call<Order> call, Response<Order> response) {
-//                        Order order = response.body();
-//
-//                        Intent intent = new Intent(getContext(), OrderDetailsActivity.class);
-//                        intent.putExtra("order", order);
-//                        startActivity(intent);
-//
-//                    }
-//
-//                    @Override
-//                    protected void onResponseFailed(Call<Order> call, Throwable t) {
-//
-//                    }
-//                });
+                PreOrder preOrder = new PreOrder(cartIds);
+                Call<Order> call = parent.mainApi.orderCarts(preOrder);
+                call.enqueue(new RequestCallback<Order>() {
+                    @Override
+                    protected void onResponseSuccess(Call<Order> call, Response<Order> response) {
+                        Order order = response.body();
+
+                        Intent intent = new Intent(getContext(), OrderDetailsActivity.class);
+                        intent.putExtra("order", order);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    protected void onResponseFailed(Call<Order> call, Throwable t) {
+
+                    }
+                });
 
 
             }

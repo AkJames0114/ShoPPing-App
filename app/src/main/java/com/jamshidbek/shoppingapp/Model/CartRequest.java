@@ -2,7 +2,9 @@ package com.jamshidbek.shoppingapp.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CartRequest {
+import java.io.Serializable;
+
+public class CartRequest implements Serializable {
 
     @SerializedName("product")
     private int product;

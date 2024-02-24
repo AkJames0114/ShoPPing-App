@@ -2,9 +2,10 @@ package com.jamshidbek.shoppingapp.Model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PreOrder {
+public class PreOrder implements Serializable {
 
     @SerializedName("carts")
     private ArrayList<Integer> carts;

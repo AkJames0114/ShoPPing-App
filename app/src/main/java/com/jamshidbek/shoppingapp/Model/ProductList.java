@@ -4,9 +4,10 @@ package com.jamshidbek.shoppingapp.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ProductList {
+public class ProductList implements Serializable {
 
     @SerializedName("count")
     @Expose

@@ -2,7 +2,9 @@ package com.jamshidbek.shoppingapp.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Subproduct {
+import java.io.Serializable;
+
+public class Subproduct implements Serializable {
 
     @SerializedName("id")
     private int id;
