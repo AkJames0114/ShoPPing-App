@@ -40,256 +40,251 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/orderNum"
-        android:layout_width="194dp"
+    <LinearLayout
+        android:id="@+id/customerDetails"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
         android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Order Number"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/appBar"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvData"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="2024-02-24-8"
-        app:layout_constraintTop_toTopOf="@id/orderNum"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
-        android:id="@+id/orderStatus"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Order Status"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/orderNum"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="Pending"
-        app:layout_constraintTop_toTopOf="@id/orderStatus"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:orientation="vertical"
+        android:padding="7dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
 
 
-    <TextView
-        android:id="@+id/payment"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Payment"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/orderStatus"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
-    <TextView
-        android:id="@+id/tvPayment"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="Paid"
-        app:layout_constraintTop_toTopOf="@id/payment"
-        app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:id="@+id/orderNum"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Order number"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/colorOption"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="2024-02-27-8" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/orderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Order status"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="Pending" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/payment"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Payment"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="Paid" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Total price"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="320,000Won" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Name"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="Jamshidbek" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/phoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Phone number"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvPhoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="010-2366-1401" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:text="Address"
+                android:textColor="#b0afaf"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="1sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="Address" />
+        </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/totalPrice"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Total Price"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/payment"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvTotalPrice"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="320,000 Won"
-        app:layout_constraintTop_toTopOf="@id/totalPrice"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Name"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/totalPrice"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="Jamshidbek"
-        app:layout_constraintTop_toTopOf="@id/name"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-
-    <TextView
-        android:id="@+id/phoneNum"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Phone number"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvPhoneNum"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="010-2366-1401"
-        app:layout_constraintTop_toTopOf="@id/phoneNum"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="20dp"
-        android:text="Address"
-        android:textColor="#b0afaf"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/phoneNum"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="end"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="15dp"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="1sp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        tools:text="Address"
-        app:layout_constraintTop_toTopOf="@id/address"
-        app:layout_constraintRight_toRightOf="parent"/>
-
+    </LinearLayout>
 
     <!--- Order View -->
 
@@ -298,10 +293,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/customerDetails"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
