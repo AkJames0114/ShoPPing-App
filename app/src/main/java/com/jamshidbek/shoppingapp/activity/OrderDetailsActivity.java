@@ -25,4 +25,6 @@ public class OrderDetailsActivity extends BaseActivity<ActivityOrderDetailsBindi
     protected ActivityOrderDetailsBinding inflateViewBinding(LayoutInflater inflater) {
         return ActivityOrderDetailsBinding.inflate(inflater);
     }
+
+    
 }

@@ -70,4 +70,6 @@ public interface MainApi {
 
     @POST("/v1/cart/order/")
     Call<Order> orderCarts(@Body PreOrder preOrder);
+    @GET("/v1/order/{id}")
+    Call<Order> getOrder(@Path("id")int id);
 }
