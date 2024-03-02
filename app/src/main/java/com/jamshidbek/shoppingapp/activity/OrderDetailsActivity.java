@@ -77,7 +77,6 @@ public class OrderDetailsActivity extends BaseActivity<ActivityOrderDetailsBindi
         binding.tvName.setText(order.getName());
         binding.tvPhoneNum.setText(order.getPhone());
         binding.tvAddress.setText(order.getAddress());
-
         orderedProductArrayList.addAll(order.getProducts());
         adapter.notifyDataSetChanged();
 
