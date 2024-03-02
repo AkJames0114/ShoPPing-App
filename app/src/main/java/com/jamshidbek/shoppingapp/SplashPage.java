@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 
 import com.jamshidbek.shoppingapp.Base.BaseActivity;
 import com.jamshidbek.shoppingapp.Base.PreferenceManager;
+import com.jamshidbek.shoppingapp.activity.OrderDetailsActivity;
 import com.jamshidbek.shoppingapp.databinding.ActivitySplashPageBinding;
 
 public class SplashPage extends BaseActivity<ActivitySplashPageBinding> {

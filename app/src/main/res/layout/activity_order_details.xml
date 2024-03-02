@@ -72,7 +72,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/colorOption"
+                android:id="@+id/tvOrderNum"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_weight="1"
@@ -120,7 +120,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="Pending" />
+                android:text="n/a" />
         </LinearLayout>
 
         <LinearLayout
@@ -154,7 +154,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="Paid" />
+                android:text="n/a" />
         </LinearLayout>
 
         <LinearLayout
@@ -189,7 +189,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="320,000Won" />
+                android:text="total price" />
         </LinearLayout>
 
         <LinearLayout
@@ -224,7 +224,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="Jamshidbek" />
+                android:text="Name" />
         </LinearLayout>
 
         <LinearLayout
@@ -259,7 +259,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="010-2366-1401" />
+                android:text="010-1234-5678" />
         </LinearLayout>
 
         <LinearLayout

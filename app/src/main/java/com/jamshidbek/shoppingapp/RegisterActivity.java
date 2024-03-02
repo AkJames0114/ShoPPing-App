@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import android.app.Activity;
@@ -15,6 +16,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.jamshidbek.shoppingapp.Base.BaseActivity;
 import com.jamshidbek.shoppingapp.Model.User;
@@ -26,6 +30,9 @@ import retrofit2.Response;
 
 public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
 
+    private String deviceToken;
+
+
     @Override
     protected ActivityRegisterBinding inflateViewBinding(LayoutInflater inflater) {
         return ActivityRegisterBinding.inflate(inflater);
@@ -34,6 +41,16 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if (task.isSuccessful()){
+                    deviceToken = task.getResult();
+                }
+            }
+        });
+
         //Eye show hide button logic!
         binding.showHideBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +166,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
 
                 String full_address = "[" + postCode + "] " + address + ", " + addressDetails1;
                 User user = new User(email, password, firstname, lastname, phoneNumber, full_address);
+                user.setDeviceToken(deviceToken);
                         Log.d("User", new Gson().toJson(user));
 
                         Call<User> call = mainApi.createUser(user);

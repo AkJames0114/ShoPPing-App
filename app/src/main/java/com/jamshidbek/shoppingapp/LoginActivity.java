@@ -1,5 +1,6 @@
 package com.jamshidbek.shoppingapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +17,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.gson.JsonObject;
 import com.jamshidbek.shoppingapp.Base.BaseActivity;
+import com.jamshidbek.shoppingapp.Base.RequestCallback;
 import com.jamshidbek.shoppingapp.Model.User;
 import com.jamshidbek.shoppingapp.databinding.ActivityLoginBinding;
 
@@ -25,6 +31,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
+
+    private String deviceToken;
 
 
     @Override
@@ -39,6 +47,16 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if (task.isSuccessful()){
+                    deviceToken = task.getResult();
+
+                }
+            }
+        });
 
 
         //How to show verified email icon:
@@ -133,6 +151,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
             }
         });
 
+
         //Login (Main Api) ! --------------------------------------------->
         binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,8 +176,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                             preferenceManager.setValue("access_token", user.getAccessToken());
                             preferenceManager.setValue("user", user);
 
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            updateDeviceToken(user);
+
                         }
                     }
 
@@ -167,6 +186,24 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
                     }
                 });
+            }
+        });
+    }
+    private void updateDeviceToken(User user){
+        JsonObject body = new JsonObject();
+        body.addProperty("device_token", deviceToken);
+
+        Call<User> call = mainApi.updateUser(user.getId(), body);
+        call.enqueue(new RequestCallback<User>() {
+            @Override
+            protected void onResponseSuccess(Call<User> call, Response<User> response) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onResponseFailed(Call<User> call, Throwable t) {
+
             }
         });
     }

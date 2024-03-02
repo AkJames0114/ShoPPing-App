@@ -1,5 +1,6 @@
 package com.jamshidbek.shoppingapp.Base;
 
+import com.google.gson.JsonObject;
 import com.jamshidbek.shoppingapp.Model.Banner;
 import com.jamshidbek.shoppingapp.Model.Cart;
 import com.jamshidbek.shoppingapp.Model.CartRequest;
@@ -17,6 +18,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface MainApi {
@@ -26,6 +28,8 @@ public interface MainApi {
 
     @POST("/v1/user/")
     Call<User> createUser(@Body User user);
+    @PUT("/v1/user/{id}/")
+    Call<User> updateUser(@Path("id") int userId, @Body JsonObject body);
 
     /*Lesson 35. 1:54:00
 
@@ -70,6 +74,6 @@ public interface MainApi {
 
     @POST("/v1/cart/order/")
     Call<Order> orderCarts(@Body PreOrder preOrder);
-    @GET("/v1/order/{id}")
+    @GET("/v1/order/{id}/")
     Call<Order> getOrder(@Path("id")int id);
 }

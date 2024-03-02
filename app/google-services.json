@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "860286107799",
+    "project_id": "shopping-mall-971fd",
+    "storage_bucket": "shopping-mall-971fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860286107799:android:9e5293af43c6afc954a9d2",
+        "android_client_info": {
+          "package_name": "com.jamshidbek.shoppingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBS8izgDDf-iZlOC1xxJiv-IL3h9cgClM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
