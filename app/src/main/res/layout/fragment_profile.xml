@@ -46,7 +46,7 @@
 
 
     <TextView
-        android:id="@+id/tvColor"
+        android:id="@+id/myAddressBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -69,11 +69,11 @@
         android:background="#e8e8e8"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvColor" />
+        app:layout_constraintTop_toBottomOf="@+id/myAddressBtn" />
 
 
     <TextView
-        android:id="@+id/tvSize"
+        android:id="@+id/myOrderBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -87,7 +87,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvColor" />
+        app:layout_constraintTop_toBottomOf="@+id/myAddressBtn" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -95,11 +95,11 @@
         android:background="#e8e8e8"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSize" />
+        app:layout_constraintTop_toBottomOf="@+id/myOrderBtn" />
 
 
     <TextView
-        android:id="@+id/details"
+        android:id="@+id/settingsBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -113,7 +113,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSize" />
+        app:layout_constraintTop_toBottomOf="@+id/myOrderBtn" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -121,7 +121,7 @@
         android:background="#e8e8e8"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsBtn" />
 
     <TextView
         android:id="@+id/logoutBtn"
@@ -137,7 +137,7 @@
         android:textColor="#ffffff"
         android:textSize="16sp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/details" />
+        app:layout_constraintTop_toBottomOf="@id/settingsBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

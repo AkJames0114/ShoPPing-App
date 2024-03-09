@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 import androidx.annotation.NonNull;
@@ -20,18 +21,19 @@ import com.jamshidbek.shoppingapp.Model.Banner;
 import com.jamshidbek.shoppingapp.Model.User;
 import com.jamshidbek.shoppingapp.R;
 import com.jamshidbek.shoppingapp.RegisterActivity;
+import com.jamshidbek.shoppingapp.activity.MyAddressActivity;
 import com.jamshidbek.shoppingapp.databinding.FragmentProfileBinding;
 
 import java.io.File;
 
 public class ProfileFragment extends BaseFragment<FragmentProfileBinding> {
 
-
     private User user;
     @Override
     protected FragmentProfileBinding inflateView(LayoutInflater inflater, ViewGroup parent, boolean toAttach) {
         return FragmentProfileBinding.inflate(inflater, parent, toAttach);
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -59,6 +61,14 @@ public class ProfileFragment extends BaseFragment<FragmentProfileBinding> {
                 startActivity(intent);
             }
         });
+        binding.myAddressBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MyAddressActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 //    @Override
 //    public void onResume() {

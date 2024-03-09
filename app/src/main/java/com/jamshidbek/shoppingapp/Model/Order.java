@@ -22,6 +22,7 @@ public class Order implements Serializable {
     private String payment;
 
 
+
     @SerializedName("products")
     private ArrayList<OrderedProduct> products;
 

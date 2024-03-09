@@ -6,4 +6,113 @@
     android:layout_height="match_parent"
     tools:context=".activity.MyAddressActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        app:titleTextColor="@color/black">
+
+        <TextView
+            android:id="@+id/pageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="6sp"
+            android:text="My Address"
+            android:textColor="#201a1b"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tvpostCode"
+        android:layout_width="197dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:hint="Post code"
+        android:padding="14sp"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+    <TextView
+        android:id="@+id/btnAddress"
+        android:layout_width="155dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/primary_btn_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:hint="Post code"
+        android:padding="14dp"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvpostCode" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:hint="Address"
+        android:lineSpacingExtra="4sp"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvpostCode" />
+
+    <EditText
+        android:id="@+id/etAddressDetatils"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/onboarding_edittext_bg_selector"
+        android:hint="Address "
+        android:lineSpacingExtra="4sp"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+    <TextView
+        android:id="@+id/saveBtn"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:clickable="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/primary_btn_bg"
+        android:gravity="center"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

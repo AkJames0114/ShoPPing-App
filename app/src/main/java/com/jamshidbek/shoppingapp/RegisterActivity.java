@@ -121,8 +121,8 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
                 String password = binding.passwordEditText.getText().toString();
                 String confirmPassword = binding.confirmPassEditText.getText().toString();
                 String phoneNumber = binding.phoneNumEditText.getText().toString();
-                String address = binding.tvAddress.getText().toString();
-                String addressDetails1 = binding.etAddressDetatils.getText().toString();
+                String tvAddress = binding.tvAddress.getText().toString();
+                String etAddressDetails = binding.etAddressDetatils.getText().toString();
                 String postCode = binding.tvpostCode.getText().toString();
                 //checking input is empty
                 if (!isEmailValid(email)) {
@@ -153,18 +153,18 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
                     return;
                 }
 
-                if (postCode.isEmpty() || address.isEmpty()) {
+                if (postCode.isEmpty() || tvAddress.isEmpty()) {
                     binding.tvpostCode.setError("Required");
                     binding.tvAddress.setError("Required");
                     return;
                 }
 
-                if (addressDetails1.isEmpty()) {
+                if (etAddressDetails.isEmpty()) {
                     binding.etAddressDetatils.setError("Required");
                     return;
                 }
 
-                String full_address = "[" + postCode + "] " + address + ", " + addressDetails1;
+                String full_address = "[" + postCode + "] " + tvAddress + ", " + etAddressDetails;
                 User user = new User(email, password, firstname, lastname, phoneNumber, full_address);
                 user.setDeviceToken(deviceToken);
                         Log.d("User", new Gson().toJson(user));
@@ -183,6 +183,9 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
                                     preferenceManager.setValue("email", newUser.getEmail());
                                     preferenceManager.setValue("password", password);
                                     preferenceManager.setValue("phoneNumber", newUser.getPhoneNumber());
+                                    preferenceManager.setValue("etAddressDetails", newUser.getEtAddressDetails());
+                                    preferenceManager.setValue("postcode", newUser.getPostCode());
+                                    preferenceManager.setValue("tvAddress", newUser.getTvAddress());
                                     preferenceManager.setValue("address", newUser.getAddress());
                                     moveToMain();
                                    // preferenceManager.setValue("refresh_token", newUser.getReresh_token());

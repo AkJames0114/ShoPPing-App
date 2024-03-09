@@ -26,6 +26,15 @@ public class User implements Serializable {
 
     @SerializedName("address")
     private String address;
+    @SerializedName("postcode")
+    private String postCode;
+
+    @SerializedName("tv_address")
+    private String tvAddress;
+
+    @SerializedName("et_address_details")
+    private String etAddressDetails;
+
     @SerializedName("img")
     private String img;
 
@@ -98,6 +107,30 @@ public class User implements Serializable {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getTvAddress() {
+        return tvAddress;
+    }
+
+    public void setTvAddress(String tvAddress) {
+        this.tvAddress = tvAddress;
+    }
+
+    public String getEtAddressDetails() {
+        return etAddressDetails;
+    }
+
+    public void setEtAddressDetails(String etAddressDetails) {
+        this.etAddressDetails = etAddressDetails;
     }
 
     public void setAddress(String address) {
